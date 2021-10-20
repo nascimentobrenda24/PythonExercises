@@ -8,7 +8,7 @@ pair = []
 
 while True:
     num = int(input('Digite um número: '))
-
+    cont = str(input('Deseja continuar [S/N]: '))
     if num in list:
         print('Valor duplicado! Não vou adicionar...')
 
@@ -16,4 +16,16 @@ while True:
         list.append(num)
         print('Valor adicionado com sucesso!!')
         # Principal situation: Pair or odd
+        if num % 2 == 0:
+            pair.append(num)
+        else:
+            odd.append(num)
+
+
+    if cont in 'Nn':
+        break
+
+
+print(f'Sua lista é {list}')
+print(f'Os valores pares digitados foram: {pair}'if pair.count(num%2==0) > 1 else 'O valor par digitado ')
 
