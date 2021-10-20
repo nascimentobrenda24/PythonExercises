@@ -5,19 +5,13 @@
 list = []
 
 while True:
-    # Receiving the inputs of users
-    n = int(input('Digite um número: '))
-    # First Case: If the value showed from user was in empty list, it will add in this list
-    if n not in list:
-        list.append(n)
-        print('Valor adicionado com sucesso...')
-
+    num = int(input('Digite um valor:'))
+    if num not in list:
+        list.append(num)
+        print('Adicionado com sucesso!')
     else:
-        print('Valor duplicado...Não vou adicionar!')
-
-    continuar = str(input('Quer continuar? [S/N]: ')).upper()
-
+        print('Valor duplicado! Não vou adicionar...')
+    continuar = str(input('Quer continuar [S/N]: '))
     if continuar in 'Nn':
         break
-
-print(list)
+print(f'Sua lista está completa: {sorted(list)}')
