@@ -27,5 +27,6 @@ while True:
 
 
 print(f'Sua lista é {list}')
-print(f'Os valores pares digitados foram: {pair}'if pair.count(num%2==0) > 1 else 'O valor par digitado ')
+print(f'Os valores pares são: {pair}'if pair.count(num % 2 == 0) > 1 else f'O valor par é {pair}')
+print(f'E os valore ímpares são:{odd}'if odd.count(num % 2 != 0) > 1 else f'O valor ímpar é {odd} ')
 
