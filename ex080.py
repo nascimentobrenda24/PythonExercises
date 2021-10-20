@@ -2,33 +2,24 @@
 # correta de inserção (sem usar o sort()).
 # No final, mostre a lista ordenada na tela
 
-values = []
-ma = 0
-mi = 0
+list = []
 
+for c in range(0, 5):
+    num = int(input('Digite um valor:'))
+    if num in list:
+        print('Valor duplicado! Não adicionarei')
 
-for v in range(0, 5):
-    num = int(input('Digite um valor: '))
-    # First situation: Duplicate value
-    if num not in values:
-        values.append(num)
-        print('Valor adicionado com sucesso!')
-        # In the first looping: minors and max values
-        # The logic of this validation is authenticate the "num" variable in list looking to minor and major values
-        # in list and rearranging in ascending order them again in list
-        if v == 0:
-            num = ma = mi
-
-        # When skip to next loop
+    elif num not in list:
+        if c == 0 or num > list[-1]:
+            list.append(num)
+            print('Adicionado na última posição com sucesso!')
         else:
-            if num > ma:
-                ma = num
-                #list.insert()
-            elif num < mi:
-                mi = num
-                list.insert(0, num)
+            pos = 0
+            while pos < len(list):
+                if num <= list[pos]:
+                    list.insert(pos, num)
+                    print(f'Adicionado com sucesso na {pos}ª posição')
+                    break
+                pos += 1
 
-    else:
-        print('Valor duplicado!. Não vou adicionar...')
-
-print(f'Sua lista é: {list} ', end=' ')
+print(list)
