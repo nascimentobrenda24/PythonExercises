@@ -15,6 +15,7 @@ while True:
     else:
         list.append(num)
         print('Valor adicionado com sucesso!!')
+
         # Principal situation: Pair or odd
         if num % 2 == 0:
             pair.append(num)
@@ -25,8 +26,11 @@ while True:
     if cont in 'Nn':
         break
 
-
+print('=*'*30)
 print(f'Sua lista é {list}')
-print(f'Os valores pares são: {pair}'if pair.count(num % 2 == 0) > 1 else f'O valor par é {pair}')
-print(f'E os valore ímpares são:{odd}'if odd.count(num % 2 != 0) > 1 else f'O valor ímpar é {odd} ')
+print(f'Os valores pares digitados foram: {pair}'if pair.count(num % 2 == 0) > 1
+      else f'O valor par digitado foi: {pair}')
+print(f'E os valores ímpares digitados foram: {odd}'if odd.count(num % 2 == 1) > 1
+      else f'E o valor ímpar digitado foi: {odd} ')
+print('=*'*30)
 
