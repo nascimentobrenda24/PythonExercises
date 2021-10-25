@@ -2,18 +2,20 @@
 #  se a expressão passada está com os parênteses abertos e fechados na ordem correta.
 
 l = ["(", ")"]
-e = input('Input a value:')
+e = input('Digite um valor:')
 
 #Validating the existence of parentheses
-#First Probabily: Have parentheses
-if l.index("(") > 1 or l.index(")"):
-    print("Your equation have parentheses!!")
 
-elif l.index("(") > 1 and l.index(")") == 0:
-    print('')
+# After validate the fact with have parenthesis, we may analyze if the combination of both it is correctly
+if l.count("(") > 1 or l.count(")"):
+    print("Sua equação tem parênteses!!")
+    # When the user digit in equation a parentheses and don't completed with other
+    if l.count("(") > 1 and l.count(")") == 0:
+        print('Sua expressão está inválida!')
 
 
 
 
 else:
-    print("Your equation haven't paretheses!!")
+    print("Sua equação não tem parênteses!!")
+    print('Sua equação está válida!')
