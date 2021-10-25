@@ -7,11 +7,12 @@ e = input('Digite um valor:')
 #Validating the existence of parentheses
 
 # After validate the fact with have parenthesis, we may analyze if the combination of both it is correctly
-if l.count("(") > 1 or l.count(")"):
+if e.count("(") > 0 or e.count(")"):
     print("Sua equação tem parênteses!!")
-    # When the user digit in equation a parentheses and don't completed with other
-    if l.count("(") > 1 and l.count(")") == 0:
-        print('Sua expressão está inválida!')
+
+# When the user digit in equation a parentheses and don't completed with other
+elif e.count("(") > 0 and e.count(")") == 0:
+    print('Sua expressão está inválida!')
 
 
 
