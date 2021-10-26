@@ -1,13 +1,22 @@
 #  Crie um programa onde o usuário digite uma expressão qualquer que use parênteses. Seu aplicativo deverá analisar
 #  se a expressão passada está com os parênteses abertos e fechados na ordem correta.
 
-while True:
-    entrada = str(input('Digite a expressão: '))
+exp = str(input('Digite uma expressão matemática:'))
+battery = []
 
-    para_esquerda = entrada.count('(')
-    para_direita = entrada.count(')')
+for symbol in exp:
+    if symbol == "(":
+        battery.append("(")
 
-    if para_esquerda == para_direita:
-        print(f'Essa expressão {entrada} é válida.')
-    else:
-        print(f'Essa expressão {entrada} é inválida.')
+    elif symbol == ")":
+        if len(exp) > 0:
+            battery.pop()
+        else:
+            battery.append(")")
+        break
+
+if len(battery) == 0:
+    print('Sua expressão está válida!')
+
+else:
+    print('Sua expressão não é válida!')
