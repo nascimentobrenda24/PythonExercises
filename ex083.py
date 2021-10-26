@@ -11,8 +11,8 @@ if e.count("(") > 0 or e.count(")"):
     print("Sua equação tem parênteses!!")
 
 # When the user digit in equation a parentheses and don't completed with other
-elif e.count("(") > 0 and e.count(")") == 0:
-    print('Sua expressão está inválida!')
+elif e.count("(") > 0 and e.count(")") == 1 or e.count(")") > 0 and e.count("(") == 1:
+    print('Só um parênteses detectado\nSua expressão está incompleta, logo inválida!')
 
 
 
