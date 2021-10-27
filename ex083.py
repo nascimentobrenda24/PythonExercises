@@ -6,17 +6,16 @@ battery = []
 
 for symbol in exp:
     if symbol == "(":
-        battery.append("(")
+        battery.append(symbol)
 
     elif symbol == ")":
-        if len(exp) > 0:
+        if len(battery) > 0:
             battery.pop()
         else:
-            battery.append(")")
-        break
+            battery.append(symbol)
+            break
 
 if len(battery) == 0:
-    print('Sua expressão está válida!')
-
+    print('Sua expressão está válida')
 else:
-    print('Sua expressão não é válida!')
+    print('Sua expressão não é válida')
