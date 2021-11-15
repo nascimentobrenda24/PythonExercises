@@ -14,7 +14,7 @@ for c in range(0, 5):
     if c == 0:
         # In the first looping the max and minor number will be the first value provided
         max = min = list_num[c]
-    # In the second looping
+    # In the second looping, we may validate with with this value is max than the last number
     else:
         if list_num[c] > max:
             max = list_num[c]
@@ -26,12 +26,15 @@ print('='*30)
 print(f'Você digitou os valores {list_num}')
 
 print(f'O maior valor digitado foi {max} nas posições ', end='')
+
 # Looping to recognize the positions of the max and min values identifies
+# Max position
 for position, value in enumerate(list_num):
     if value == max:
         print(f'{position}...', end='')
 print(f'\nE o menor valor digitado foi o {min} nas posições ', end='')
 print()
+# Min position
 for position, value in enumerate(list_num):
     if value == min:
         print(f'{position}...', end='')
