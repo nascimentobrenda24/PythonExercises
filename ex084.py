@@ -36,10 +36,13 @@ print(f'Ao todo se cadastram {len(main)} pessoas' if len(main) > 1
       else f'Ao todo se cadastrou {len(main)}')
 
 print(f'O maior peso foi de {heavy} Kg. Peso de ', end='')
+# Finding the heavies and lighters (them names)
+# Heavies
 for p in main:
     if p[1] == heavy:
         print(f'{p[0]}', end='')
 print(f'\nE o menor peso foi de {light} kg. Peso de ', end='')
+# Lighters
 for p in main:
     if p[1] == light:
         print(f'{p[0]}', end='')
