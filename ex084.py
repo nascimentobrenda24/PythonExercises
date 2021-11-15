@@ -3,40 +3,55 @@
 # B) Uma listagem com as pessoas mais pesadas.
 # C) Uma listagem com as pessoas mais leves.
 
-princ = []
+main = []
 temp = []
 light = heavy = 0
 
 while True:
-    print('='*30)
+    print('='*20)
     temp.append(str(input('Nome: ')))
     temp.append(float(input('Peso[Kg]: ')))
-    # Finding the heavy and lighter
-    # In the first loop, the heavy and lighter user will the first data
-    if len(princ) == 0:
-        heavy = light = temp[1] # princ[1] = weight
+
+    # When nothing has yet been added to the "main" variable, the heavy and light weight will be the first value of "temp[1]" list
+    if len(main) == 0:
+        heavy = light = temp[1] #temp[1] = weight
     else:
         if temp[1] > heavy:
             heavy = temp[1]
         elif temp[1] < light:
             light = temp[1]
 
-    # Adding the temporary database "temp" in master list "princ"
-    princ.append(temp[:]) # [:] for copy the loop currently list
-    temp.clear() # cleaning the "temp" list for clear the data in each loop
+    # Saving a copy of "temp" list in the "main" list, because, as the name show us, this is the vital list
+    main.append(temp[:])
+    temp.clear() # clear each loop for don't mix old values with current, along the loop
 
-    proceed = str(input('Quer continuar?[S/N]: '))
+    # Validating the user permanence in the software
+    proceed = str(input('Quer continuar? [S/N]: ')).upper()[0]
     if proceed in 'Nn':
         break
 
-print('='*40)
-print(princ)
-print(f'Foram cadastradas {len(princ)} pessoas')
-print(f'O maior peso digitado foi {heavy} Kg. Peso de', end=' ')
-for p in princ:
+print('=*'*20)
+
+print(f'Ao todo se cadastram {len(main)} pessoas' if len(main) > 1
+      else f'Ao todo se cadastrou {len(main)}')
+
+print(f'O maior peso foi de {heavy} Kg. Peso de ', end='')
+for p in main:
     if p[1] == heavy:
-        print(p[0], end='')
-print(f'\nO menor peso digitado foi {light} Kg. Peso de', end=' ')
-for p in princ:
+        print(f'{p[0]}', end='')
+print(f'\nE o menor peso foi de {light} kg. Peso de ', end='')
+for p in main:
     if p[1] == light:
-        print(p[0], end='')
+        print(f'{p[0]}', end='')
+print()
+print('=*'*20)
+
+
+
+
+
+
+
+
+
+
