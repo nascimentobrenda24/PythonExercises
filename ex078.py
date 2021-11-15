@@ -14,7 +14,7 @@ for c in range(0, 5):
     if c == 0:
         # In the first looping the max and minor number will be the first value provided
         max = min = list_num[c]
-    # From the second looping
+    # In the second looping
     else:
         if list_num[c] > max:
             max = list_num[c]
