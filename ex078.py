@@ -5,15 +5,11 @@ list_num = []
 mx = mn = 0
 
 for c in range(0, 5):
-    # The "append" method will be useful to add inputs of the users in the composite variable
     list_num.append(int(input(f'Digite um valor para a posição {c+1}: ')))
 
     if c == 0:
-    # In the second looping, we may validate with with this value is max than the last number
         mx = mn = list_num[c]
     else:
-            max = list_num[c]
-            min = list_num[c]
         if list_num[c] > mx:
             mx = list_num[c]
         if list_num[c] < mn:
