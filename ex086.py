@@ -4,6 +4,7 @@
 matrix = [[0, 0, 0],
           [0, 0, 0],
           [0, 0, 0]]
+
 # Sweeping each lines and, after, columns along of the matrix. In the final, we may computed values for each positions
 for l in range(0, 3):
     for c in range(0, 3):
