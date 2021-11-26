@@ -12,7 +12,7 @@ matrix = [[0, 0, 0],
 # Feeding the values entered by the user into the matrix
 for l in range(0, 3):
     for c in range(0, 3):
-        matrix[l][c] = int(input(f'Digite um valor para a posição [{l},{c}]: '))
+        matrix[l][c] = int(input(f'Digite um valor para  posição [{l},{c}]: '))
         # Looking for even pairs values to add them
         if matrix[l][c] % 2 == 0:
             tot_sum_pairs += matrix[l][c]
@@ -40,4 +40,6 @@ print('-='*20)
 print(f'A soma de todos os valores pares desta matriz equivale a {tot_sum_pairs}')
 print(f'A soma dos valores da terceira coluna resultam no valor {three_collum_sum}')
 print(f'O maior valor da segunda linha é o {bigger_value}')
+input()
+input()
 
