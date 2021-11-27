@@ -42,4 +42,3 @@ print(f'A soma dos valores da terceira coluna resultam no valor {three_collum_su
 print(f'O maior valor da segunda linha é o {bigger_value}')
 input()
 input()
-
