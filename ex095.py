@@ -9,6 +9,7 @@ tot = 0
 
 while True:
     player.clear()
+    each_matches.clear()
 
     player["Nome"] = str(input('Nome do Jogador: '))
     player["Partidas"] = int(input(f'Quantas Partidas {player["Nome"]} jogou?: '))
@@ -38,4 +39,4 @@ while True:
     if proceed == 'N':
         break
 
-print(players)
+print(players, end='\n')
