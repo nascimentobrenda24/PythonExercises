@@ -16,7 +16,7 @@
 
 # Código Fonte
 print('\033[1;30;44m=*'*20, 'SEQUÊNCIA FIBONACCI', '=*'*20, '\033[m')
-termos = int(input('\033[1;4;30mQuantos TERMOS DESSA SEQUÊNCIA desejas?\nR='))
+termos = int(input('Quantos TERMOS DESSA SEQUÊNCIA desejas?\nR='))
 # Padrões da Sequência Fibonacci
 t1 = 0
 t2 = 1
@@ -32,16 +32,19 @@ while cont <= termos:
     #Se o contador valer 2
     elif cont == 2:
         print(1, '>', end='')
-    #Senão
+    # Quando a primeira parte da estrutura fibonática passar (0, 0+1, 1, 1+1, 2 ...)
     else:
         t3 = t1 + t2 #Sequência Fibonacci
 
+        # O termos permutarão entre si, ao longo do programa
         t1 = t2
         t2 = t3
+
         print(t3, end=' ')
+
         print('>'if cont != termos else '.', end='')
 
-    cont += 1 # Ganha +1 a cada loop
+    cont += 1 # Encerrando o looping
 
 print('\n')
 print('\033[1;33m='*300)

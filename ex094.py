@@ -9,6 +9,7 @@
 guys = list()
 person = dict()
 sum = average = 0
+cont = 0
 
 while True:
     person.clear()
@@ -29,19 +30,23 @@ while True:
         break
 
 print('-='*30)
+# A
 print(f'A) Ao todo temos {len(guys)} cadastradas')
+# B
 average = sum / len(guys)
-print(f'B) A médida de idade é de de {average:5.2f} anos')
-print('C) As mulheres cadastradas foram ', end='')
+print(f'B) A médida de idade é de de {average} anos')
+# C
+print('C) As mulheres cadastradas foram: ', end='')
 for p in guys:
     if p["sexo"] in 'Ff':
-        print(f'{p["nome"]},', end='')
-
-print(f'\nD) Lista das pessoas que estão acima da média', end='')
+        cont += 1
+        print(f'{p["nome"]}', end='')
+# D
+print(f'\nD) Lista da(s) pessoa(s) que estão acima da média', end='')
 for p in guys:
     if p["idade"] >= average:
         print('       ', end='')
         for k, v in p.items():
             print(f'\n    - {k} = {v}', end='')
         print()
-print('<<<ENCERRADO>>>')
+print('\n<<<ENCERRADO>>>')
