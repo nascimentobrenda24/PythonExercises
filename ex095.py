@@ -10,7 +10,7 @@ tot = 0
 while True:
     player.clear()
 
-    player["Nome"] = str(input('Nome: '))
+    player["Nome"] = str(input('Nome do Jogador: '))
     player["Partidas"] = int(input(f'Quantas Partidas {player["Nome"]} jogou?: '))
 
     if player["Partidas"] != 0:
@@ -20,8 +20,8 @@ while True:
             each_matches.append(goals_per_matches)
             tot += goals_per_matches
 
-            player['Gols por Partidas'] = each_matches
-            player['Total de Gols'] = tot
+            player["Gols por Partidas"] = each_matches[:]
+            player["Total de Gols"] = tot
     else:
         print('Esse jogador(a) não participou de nenhum partida.')
 
