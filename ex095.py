@@ -39,4 +39,12 @@ while True:
     if proceed == 'N':
         break
 
-print(players, end='\n')
+
+print('-='*50)
+print(f'{str("cod."):>3}', end='')
+for c in player.keys():
+    print(f'{c:^16}', end='  // ')
+print()
+print('-='*50)
+for i, datas in enumerate(players):
+    print(f'{i:>3} {datas["Nome"]:>10} {str(datas["Gols por Partidas"]):>15} {datas["Total de Gols"]:>10}')
