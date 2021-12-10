@@ -14,9 +14,10 @@ if game["Partidas"] != 0:
     # Calculating the goals in the respective games in time of matches, whose this player played
     for p in range(game["Partidas"]):
         goals_per_matches = int(input(f'  - Gols na partida {p+1}: '))
-        each_matches.append(goals_per_matches)
 
+        each_matches.append(goals_per_matches)
         tot += goals_per_matches
+
         game["Gols por Partida"] = each_matches
         game["Total de Gols"] = tot
 else:
@@ -33,5 +34,5 @@ for k, v in game.items():
 print('-='*30)
 print(f'O jogador(a) {game["Nome"]} jogou {game["Partidas"]} partidas')
 for p in range(game["Partidas"]):
-    print(f'Na partida {p+1}, fez {game["Gols por Partida"][p]} gols')
+    print(f'   - {p+1}ª partida: {game["Gols por Partida"][p]} gols')
 
