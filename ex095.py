@@ -5,12 +5,13 @@ players = []
 player = {}
 each_matches = []
 
-tot = 0
+
 
 while True:
     player.clear()
     each_matches.clear()
 
+    tot = 0
     player["Nome"] = str(input('Nome do Jogador: '))
     player["Partidas"] = int(input(f'Quantas Partidas {player["Nome"]} jogou?: '))
 
@@ -39,12 +40,30 @@ while True:
     if proceed == 'N':
         break
 
+print('-='*30)
 
-print('-='*50)
-print(f'{str("cod."):>3}', end='')
-for c in player.keys():
-    print(f'{c:^16}', end='  // ')
+# Scoreboard Style
+print('cod', end='')
+for e in player.keys():
+    print(f'{e:>20}', end='')
 print()
-print('-='*50)
-for i, datas in enumerate(players):
-    print(f'{i:>3} {datas["Nome"]:>10} {str(datas["Gols por Partidas"]):>15} {datas["Total de Gols"]:>10}')
+# Scoreboard Results
+print('-'*80)
+for k, v in enumerate(players):
+    print(f'{k:>4}', end='')
+    for d in v.values():
+        print(f'{str(d):<20}', end='')
+    print()
+print('-'*80)
+while True:
+    search = int(input('Mostrar dados de qual jogador? (999 para parar): '))
+    if search == 999:
+        break
+    if search >= len(players):
+        print(f'ERRO! Não existe jogador com código {search}!')
+    else:
+        print(f'-----LEVANTAMENTO DO JOGADOR {players[search]["Nome"]}')
+        for i, g in enumerate(players[search]["Gols por Partidas"]):
+            print(f'   No jogo {i+1} fez {g} gols.')
+    print('-'*40)
+print('<<VOLTE SEMPRE>>')
