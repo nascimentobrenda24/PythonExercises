@@ -52,17 +52,21 @@ print('-'*80)
 for k, v in enumerate(players):
     print(f'{k:>4}', end='')
     for d in v.values():
-        print(f'{str(d):<20}', end='')
+        print(f'{str(d):>18}', end='')
     print()
 print('-'*80)
+
+# User database
 while True:
     search = int(input('Mostrar dados de qual jogador? (999 para parar): '))
+
     if search == 999:
         break
     if search >= len(players):
         print(f'ERRO! Não existe jogador com código {search}!')
     else:
         print(f'-----LEVANTAMENTO DO JOGADOR {players[search]["Nome"]}')
+        # Inside of the user database: Show the quantitative
         for i, g in enumerate(players[search]["Gols por Partidas"]):
             print(f'   No jogo {i+1} fez {g} gols.')
     print('-'*40)
